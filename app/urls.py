@@ -21,9 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static  # Import static
 
 urlpatterns = [
-    path('', include('resources.urls')),
+    path('', include('tenurdu.urls')),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
     path('static/<path:path>', serve, {'document_root': settings.STATIC_ROOT}),
+    path('ads.txt', serve, {'document_root': settings.BASE_DIR, 'path': 'ads.txt'}, name='ads_txt'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

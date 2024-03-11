@@ -30,8 +30,8 @@ Run at root dir of project
 In your web browser, visit your server’s domain name or IP address followed by :8000
 `http://server_domain_or_IP:8000`
 
-`Alias /static /<project-root-dir-path>/resources/static
-<Directory /<project-root-dir-path>/resources/static>
+`Alias /static /<project-root-dir-path>/tenurdu/static
+<Directory /<project-root-dir-path>/tenurdu/static>
     Require all granted
 </Directory>
 
