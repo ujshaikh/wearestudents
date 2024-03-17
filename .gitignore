@@ -22,6 +22,6 @@
 /env/
 /logs/
 /src/node_modules/
-/tenurdu/media
+/media
 /stats/
 {{ project_name }}/settings/local.py
