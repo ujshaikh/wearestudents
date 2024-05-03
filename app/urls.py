@@ -25,7 +25,8 @@ urlpatterns = [
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
     path('static/<path:path>', serve, {'document_root': settings.STATIC_ROOT}),
     path('ads.txt', serve, {'document_root': settings.BASE_DIR, 'path': 'ads.txt'}, name='ads_txt'),
-    path('sitemap.xml', serve, {'document_root': settings.BASE_DIR, 'path': 'tenurdu/sitemap.xml'}, name='sitemap_xml'),
+    path('sitemap.xml', serve, {'document_root': settings.BASE_DIR, 'path': '/tenurdu/sitemap.xml'}, name='sitemap_xml'),
+    path('robots.txt', serve, {'document_root': settings.BASE_DIR, 'path': '/tenurdu/robots.txt'}, name='robots_txt'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
