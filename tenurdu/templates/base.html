@@ -43,6 +43,10 @@
             text-align: center;
             color: white;
         }
+        ul li{
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -83,14 +87,45 @@
         {% block content %}{% endblock %}
     </div>
 
-    <footer>
-        <div class="container">
-            <p class="mb-0">Copyright 2024 we are students, All rights reserved.</p>
-            <p class="mb-0">
-                <a href="/policy" class="text-decoration-none me-2 text-white">Privacy Policy</a> |
-                <a href="/terms" class="text-decoration-none ms-2 text-white">Terms of Service</a>
-            </p>
+    <footer class="py-5">
+        <div class="row justify-content-start container-fluid">
+          <div class="col-md-3 my-3">
+            <img width="200px" class="img-fluid" src="/media/logo-img.png" alt="logo-img">
+          </div>
+          <div class="col-md-3 container">            
+            <h3>Usefull Links</h3>
+            <ul class="p-0 text-center" style="list-style-type: none;">
+              <li><a href="/" class="me-2 text-white" style="text-decoration: underline;">Home</a></li>
+              <li><a href="/gallery" class="ms-2 text-white" style="text-decoration: underline;">Gallery</a></li>
+              <li><a href="/disclaimer" class="ms-2 text-white" style="text-decoration: underline;">Disclaimer</a></li>
+              <li><a href="/about" class="ms-2 text-white" style="text-decoration: underline;">About Us</a></li>
+              <li><a href="/contact" class="ms-2 text-white" style="text-decoration: underline;">Contact Us</a></li>
+              <li><a href="/policy" class="ms-2 text-white" style="text-decoration: underline;">Privacy Policy</a></li>
+              <li><a href="/terms" class="ms-2 text-white" style="text-decoration: underline;">Terms Of Service</a></li>
+            </ul>                
+          </div>
+
+          <div class="col-md-3 container">            
+            <h3>Question Papers</h3>
+            <ul class="p-0" style="list-style-type: none;">
+              <li><a href="/qpaper?standard=3&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">10th Question papers</a></li>
+              <li><a href="/qpaper?standard=2&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">9th Question papers</a></li>
+              <li><a href="/qpaper?standard=1&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">8th Question papers</a></li>
+            </ul>                
+          </div>
+          
+          <div class="col-md-3 container">
+            <h3>Text Books</h3>
+            <ul class="p-0" style="list-style-type: none;">
+              <li><a href="/books?standard=3&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">10th Text Books</a></li>
+              <li><a href="/books?standard=2&subject=#video-container" class="ms-2 text-white" style="text-decoration: underline;">9th Text Books</a></li>
+              <li><a href="/books?standard=1&subject=#video-container" class="ms-2 text-white" style="text-decoration: underline;">8th Text Books</a></li>
+            </ul>                
+          </div>
+
+          <p class="mb-0 mt-4">Copyright 2024 we are students, All rights reserved.</p>
         </div>
+        
     </footer>
 
     <!-- bootstrap js link -->
