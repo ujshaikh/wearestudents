@@ -9,6 +9,7 @@
     <div class="main-container">
         <header class="banner-container"></header>
 
+        {% if currentPage == 0 or currentPage == '1'  %}
         <div class="row mx-1 welcome align-items-start px-md-5 pb-md-5 pt-md-5 pt-0 px-2 pb-0" style="background-color: #f5f5f5;">
             <div class="desc col-md-3 mx-auto pt-5 pt-md-0">
                 <img class="img-fluid mb-md-0 mb-5" src="https://res.cloudinary.com/dmq0rgph0/image/upload/v1714735440/welcome_wxjxgk.jpg" alt="welcome">
@@ -36,6 +37,7 @@
                 </ul>
             </div>
         </div>
+        {% endif %}
 
         <div class="text-center pt-3">
             <img src="https://res.cloudinary.com/dmq0rgph0/image/upload/v1708828106/WhatsApp_Image_2024-02-23_at_11.31.40_PM_ufhixg.jpg" width="400px" alt="select one of the following" class="img-fluid">
@@ -44,21 +46,21 @@
         <div class="container tabs-container pt-3">
             <ul class="nav nav-pills flex-column flex-sm-row nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">YouTube Videos</a>
+                    <a class="nav-link" href="/#select-container">YouTube Videos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/qpaper">Question Paper</a>
+                    <a class="nav-link active" aria-current="page" href="/qpaper#select-container">Question Paper</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/notes">Notes</a>
+                    <a class="nav-link" href="/notes#select-container">Notes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/books">Text Books</a>
+                    <a class="nav-link" href="/books#select-container">Text Books</a>
                 </li>
             </ul>
         </div>
 
-        <div class="mt-4 mb-5 py-5 mx-2 main-content select-container">
+        <div id="select-container" class="mt-4 mb-5 py-5 mx-2 main-content select-container">
             <form method="get" action="{% url 'qpaper'%}" class="text-center">
                 <div class="form-container d-md-flex justify-content-around align-items-center my-4">{{filter.form}}</div>
 
@@ -93,27 +95,27 @@
             <ul class="pagination m-0">
                 {% if qpapers.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page=1{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}" tabindex="-1">First</a>
+                    <a class="page-link" href="?page=1{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}#video-container" tabindex="-1">First</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ qpapers.previous_page_number }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}" tabindex="-1">Previous</a>
+                    <a class="page-link" href="?page={{ qpapers.previous_page_number }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}#video-container" tabindex="-1">Previous</a>
                 </li>
                 {% endif %}
         
                 {% for n in totalPageList %}
                     {% if n >= qpapers.number|add:"-1" and n <= qpapers.number|add:"1" %}
                         <li class="page-item {% if n == qpapers.number %}active{% endif %}">
-                            <a class="page-link" href="?page={{ n }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}">{{ n }}</a>
+                            <a class="page-link" href="?page={{ n }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}#video-container">{{ n }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
         
                 {% if qpapers.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ qpapers.next_page_number }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}">Next</a>
+                    <a class="page-link" href="?page={{ qpapers.next_page_number }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}#video-container">Next</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ lastpage }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}">Last</a>
+                    <a class="page-link" href="?page={{ lastpage }}{% if selected_subjects or selected_standard %}&subject={{ selected_subjects.id }}&standard={{ selected_standard.id }}{% endif %}#video-container">Last</a>
                 </li>
                 {% endif %}
             </ul>
@@ -239,7 +241,7 @@
             width: 80%;
         }
         .banner-container {
-            background-image: url("{% static 'images/banner-image.jpg' %}");
+            background-image: url("https://res.cloudinary.com/dmq0rgph0/image/upload/v1714829400/main-img_ty9eu0.jpg");
             height: 270px;
             text-align: center;
             background-color: #2196F3; /* Blue shade */

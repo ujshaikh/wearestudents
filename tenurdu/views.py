@@ -24,6 +24,7 @@ def home(request):
     YoutubeData = paginator.get_page(page_number)
     totalpage = YoutubeData.paginator.num_pages
     
+    currentPage = page_number or 0
     images = GalleryImage.objects.all()  
 
     if request.method == 'POST':
@@ -37,7 +38,7 @@ def home(request):
         # You can also add additional logic or redirect the user to a thank you page
         messages.success(request, "Thanks for submitting the form")
 
-    return render(request, 'index.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'youtube':YoutubeData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images})
+    return render(request, 'index.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'youtube':YoutubeData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images, 'currentPage': currentPage})
 
 
 def qpaper(request):
@@ -58,6 +59,7 @@ def qpaper(request):
     QpaperData = paginator.get_page(page_number)
     totalpage = QpaperData.paginator.num_pages
 
+    currentPage = page_number or 0
     images = GalleryImage.objects.all()  
     
     if request.method == 'POST':
@@ -71,7 +73,7 @@ def qpaper(request):
         # You can also add additional logic or redirect the user to a thank you page
         messages.success(request, "Thanks for submitting the form")
           
-    return render(request, 'qpaper.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'qpapers':QpaperData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images})
+    return render(request, 'qpaper.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'qpapers':QpaperData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images, 'currentPage': currentPage})
 
 
 def notes(request):
@@ -92,6 +94,7 @@ def notes(request):
     NotesData = paginator.get_page(page_number)
     totalpage = NotesData.paginator.num_pages
 
+    currentPage = page_number or 0
     images = GalleryImage.objects.all()  
 
     if request.method == 'POST':
@@ -105,7 +108,7 @@ def notes(request):
         # You can also add additional logic or redirect the user to a thank you page
         messages.success(request, "Thanks for submitting the form")
           
-    return render(request, 'notes.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'notes':NotesData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images})
+    return render(request, 'notes.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'notes':NotesData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images, 'currentPage': currentPage})
 
 
 def books(request):
@@ -126,6 +129,7 @@ def books(request):
     BooksData = paginator.get_page(page_number)
     totalpage = BooksData.paginator.num_pages
 
+    currentPage = page_number or 0
     images = GalleryImage.objects.all()  
     
     if request.method == 'POST':
@@ -139,7 +143,7 @@ def books(request):
         # You can also add additional logic or redirect the user to a thank you page
         messages.success(request, "Thanks for submitting the form")
           
-    return render(request, 'books.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'books':BooksData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images})
+    return render(request, 'books.html', {'filter':filter_instance, 'subjects':subjects, 'standard':standard, 'books':BooksData, 'selected_subjects': selected_subjects, 'selected_standard': selected_standard, 'lastpage':totalpage, 'totalPageList':[n+1 for n in range(totalpage)], 'images': images, 'currentPage': currentPage})
 
 
 def about(request):
