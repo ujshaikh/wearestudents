@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Are Students</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/media/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/media/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    {% block meta %}{% endblock %}
+    <meta name="google-site-verification" content="ACWDeYx7vcfTJacR5eIhTFC7FGqCEJ5dzlUCukTkejk" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8327998541038095"
+     crossorigin="anonymous"></script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPP5FP3MCW"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MPP5FP3MCW'); </script>
+
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!--bootstrap icons link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- google ads link -->
+    <meta name="google-adsense-account" content="ca-pub-8327998541038095">
+
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        footer {
+            width: 100%;
+            background-color: #739675;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        ul li{
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-8327998541038095"></amp-auto-ads>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-bold" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/disclaimer">Disclaimer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/policy">Privacy Policy</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="/terms">Terms and Conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8327998541038095"
+        crossorigin="anonymous"></script>
+    <!-- Upper side of Header -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-8327998541038095"
+        data-ad-slot="7980593378"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <footer class="py-5">
+        <div class="row justify-content-start container-fluid">
+          <div class="col-md-3 my-3">
+            <img width="200px" class="img-fluid" src="/media/logo-img.png" alt="logo-img">
+          </div>
+          <div class="col-md-3 container">            
+            <h3>Usefull Links</h3>
+            <ul class="p-0 text-center" style="list-style-type: none;">
+              <li><a href="/" class="me-2 text-white" style="text-decoration: underline;">Home</a></li>
+              <li><a href="/gallery" class="ms-2 text-white" style="text-decoration: underline;">Gallery</a></li>
+              <li><a href="/disclaimer" class="ms-2 text-white" style="text-decoration: underline;">Disclaimer</a></li>
+              <li><a href="/about" class="ms-2 text-white" style="text-decoration: underline;">About Us</a></li>
+              <li><a href="/contact" class="ms-2 text-white" style="text-decoration: underline;">Contact Us</a></li>
+              <li><a href="/policy" class="ms-2 text-white" style="text-decoration: underline;">Privacy Policy</a></li>
+              <li><a href="/terms" class="ms-2 text-white" style="text-decoration: underline;">Terms Of Service</a></li>
+            </ul>                
+          </div>
+
+          <div class="col-md-3 container">            
+            <h3>Question Papers</h3>
+            <ul class="p-0" style="list-style-type: none;">
+              <li><a href="/qpaper?standard=3&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">10th Question papers</a></li>
+              <li><a href="/qpaper?standard=2&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">9th Question papers</a></li>
+              <li><a href="/qpaper?standard=1&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">8th Question papers</a></li>
+            </ul>                
+          </div>
+          
+          <div class="col-md-3 container">
+            <h3>Text Books</h3>
+            <ul class="p-0" style="list-style-type: none;">
+              <li><a href="/books?standard=3&subject=#video-container" class="me-2 text-white" style="text-decoration: underline;">10th Text Books</a></li>
+              <li><a href="/books?standard=2&subject=#video-container" class="ms-2 text-white" style="text-decoration: underline;">9th Text Books</a></li>
+              <li><a href="/books?standard=1&subject=#video-container" class="ms-2 text-white" style="text-decoration: underline;">8th Text Books</a></li>
+            </ul>                
+          </div>
+
+          <div class="col-md-8"><p class="mb-0 mt-4">Copyright 2024 we are students, All rights reserved.</p></div>
+          <div class="col-md-4 mt-md-2 mt-5">
+            <a href="https://www.youtube.com/@Wearestudents" target="_blank" rel="noopener noreferrer" class="px-3"><i class="bi bi-youtube" style="font-size: 20px;"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100053031306363&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="px-3"><i class="bi bi-facebook" style="font-size: 20px;"></i></a>
+            <a href="https://www.instagram.com/aadilkhan0707?igsh=MXF2YnYxN2RxNjlnZw==" target="_blank" rel="noopener noreferrer" class="px-3"><i class="bi bi-instagram" style="font-size: 20px;"></i></a>
+          </div>
+        </div>
+        
+    </footer>
+
+    <!-- bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

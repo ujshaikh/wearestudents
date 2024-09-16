@@ -5,33 +5,43 @@ In this guide, we will demonstrate how to install and configure Django in a Pyth
 https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-apache-and-mod_wsgi-on-ubuntu-14-04
 
 ## Some useful command to make ready to deploy on server
-`sudo apt-get update`
+`$ sudo apt-get update`
 
 If you are using Django with Python 2, the commands you need are:
-`sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3`
+
+`$ sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3`
 
 If, instead, you are using Django with Python 3
-`sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3`
+
+`$ sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3`
 
 We need to install the virtualenv command to create these environments.
-`sudo pip install virtualenv`
+
+`$ sudo pip install virtualenv`
 
 Run at root dir of project
-`virtualenv venv'
 
-`source myprojectenv/bin/activate`
-`pip install -r requirements.txt`
-`python manage.py makemigrations`
-`python manage.py migrate`
-`python manage.py createsuperuser`
-`python manage.py collectstatic`
-`python manage.py runserver 0.0.0.0:8000`
+`$ virtualenv venv'
+
+`$ source myprojectenv/bin/activate`
+
+`$ pip install -r requirements.txt`
+
+`$ python manage.py makemigrations`
+
+`$ python manage.py migrate`
+
+`$ python manage.py createsuperuser`
+
+`$ python manage.py collectstatic`
+
+`$ python manage.py runserver 0.0.0.0:8000`
 
 In your web browser, visit your server’s domain name or IP address followed by :8000
 `http://server_domain_or_IP:8000`
 
-`Alias /static /<project-root-dir-path>/resources/static
-<Directory /<project-root-dir-path>/resources/static>
+`Alias /static /<project-root-dir-path>/tenurdu/static
+<Directory /<project-root-dir-path>/tenurdu/static>
     Require all granted
 </Directory>
 
@@ -45,13 +55,19 @@ WSGIDaemonProcess wearestudents python-path=/<project-root-dir-path> python-home
 WSGIProcessGroup wearestudents
 WSGIScriptAlias / /<project-root-dir-path>/app/wsgi.py`
 
+## Useful cmd for apache2
+`$ sudo apache2ctl configtest`
+
+`$ sudo service apache2 restart`
+
 ## Permission
-`chmod 664 /<project-root-dir-path>/db.sqlite3`
-`sudo chown :www-data /<project-root-dir-path>/db.sqlite3`
+`$ sudo chmod 664 /<project-root-dir-path>/db.sqlite3`
 
-`sudo chown :www-data /<project-root-dir-path>`
+`$ sudo chown :www-data /<project-root-dir-path>/db.sqlite3`
 
-`sudo service apache2 restart`
+`$ sudo chown :www-data /<project-root-dir-path>`
+
+`$ sudo service apache2 restart`
 
 ## Conclusion
 In this guide, we’ve set up a Django project in its own virtual environment. We’ve configured Apache with mod_wsgi to handle client requests and interface with the Django app.

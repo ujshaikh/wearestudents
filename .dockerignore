@@ -22,7 +22,7 @@ logs
 env
 src/{{ project_name }}/settings/local.py
 src/node_modules
-resources/media
-resources/static/CACHE
+tenurdu/media
+tenurdu/static/CACHE
 stats
 Dockerfile
